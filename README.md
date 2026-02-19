@@ -36,22 +36,16 @@ Task change event  →  Celery  →  Redis broker → email notification worker
 ## Quick Start
 
 ```bash
-# Clone and setup
 git clone <repo-url>
 cd taskmanager
 cp .env.example .env  # fill in your values
 
-# Run everything with Docker
 docker-compose up --build
 
-# API available at: http://localhost:8000
-# Docs available at: http://localhost:8000/docs
-```
 
 ## Running Locally (without Docker)
 
 ```bash
-# Create virtual environment
 python -m venv venv
 source venv/bin/activate
 
@@ -113,10 +107,6 @@ pytest tests/ -v
 | DELETE | /columns/{id}/tasks/{task_id} | Delete task |
 | GET | /columns/{id}/tasks/{task_id}/activity | Task history |
 
-### WebSocket
-```
-ws://localhost:8000/ws/{workspace_id}?token=<access_token>
-```
 
 **Messages received:**
 ```json
